@@ -12,7 +12,11 @@
 
     </header>
     <nav id="navContent">
-
+        <a href="/" onclick="navigateTo(event, '/')">Home</a>
+        <a href="/Challenges" onclick="navigateTo(event, '/Challenges')">Challenges</a>
+        <a href="/Transportations" onclick="navigateTo(event, '/Transportations')">Transportations</a>
+        <a href="/Items" onclick="navigateTo(event, '/Items')">Items</a>
+        <a href="/Profile" onclick="navigateTo(event, '/Profile')">Profile</a>
     </nav>
     <main id="mainContent">
 
@@ -20,5 +24,8 @@
     <footer id="footerContent">
 
     </footer>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
