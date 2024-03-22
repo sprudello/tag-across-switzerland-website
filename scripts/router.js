@@ -18,6 +18,9 @@ function router() {
     const viewFunction = routes[path] || errorView;
 
     mainContent.innerHTML = viewFunction();
+    if (path === '/Profile') {
+        document.getElementById('logoutButton').addEventListener('click', logoutUser);
+    }
 }
 
 function homeView() {
@@ -41,7 +44,8 @@ function itemsView() {
 
 function profileView() {
     // Placeholder content or fetch and display user profile
-    return '<h1>Profile</h1><p>Profile content will be displayed here.</p>';
+
+    return '<h1>Profile</h1> <p>This is your profile page.</p><button id="logoutButton">Logout</button>';
 }
 
 function errorView() {
