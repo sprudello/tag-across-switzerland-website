@@ -60,3 +60,44 @@ main{
     width: auto; /* Ensures the background only extends to the edges of the text */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for depth */
 }
+
+.challenge-card {
+    background-color: var(--bgbgcolor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px; /* Adjust the width as needed */
+}
+
+.challenge-title {
+    font-size: 1.5em; /* Larger font size for titles */
+    margin-bottom: 10px;
+}
+
+.challenge-description {
+    font-size: 1em; /* Regular font size for descriptions */
+}
+
+.challenge-reward {
+    font-size: 1.2em; /* Slightly larger font size for rewards */
+    margin-top: 20px;
+    font-weight: bold; /* Make the reward stand out */
+    color: var(--primary); /* A gold-like color for rewards; change as needed */
+    text-align: right;
+}
+
+.challenge-btn {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background-color: var(--secondary);
+    color: var(--textcolor);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.challenge-btn:hover {
+    background-color: darken(var(--primarycolor), 10%);
+}

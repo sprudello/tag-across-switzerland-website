@@ -109,28 +109,40 @@ function getCurrentChallenge() {
             'Content-Type': 'application/json'
         }
     })
-    /*.then(response => {
-        if (!response.ok) {
+    .then(response => {
+        if (response.status === 404) {
+            // No active challenge exists, show the "Get Challenge" button
+            document.getElementById('mainContent').innerHTML = `<button onclick="getNewChallenge()">Get Challenge</button>`;
+            return;
+        } else if (!response.ok) {
+            // Other type of error
             throw new Error('Failed to fetch the current challenge');
         }
         return response.json();
-    })*/
+    })
     .then(data => {
-        if (data && data.activeChallenge) {
-            document.getElementById('mainContent').innerHTML = `<div>Current Challenge: ${data.activeChallenge.description}</div>`;
-        } else {
-            document.getElementById('mainContent').innerHTML = `<button onclick="getNewChallenge()">Get Challenge</button>`;
+        if (data) {
+            document.getElementById('mainContent').innerHTML = `
+                <div class="challenge-card">
+                    <h2 class="challenge-title">${data.title}</h2>
+                    <p class="challenge-description">${data.description}</p>
+                    <div class="challenge-reward">Reward: ${data.reward}</div>
+                    <button id="finishChallenge" class="challenge-btn">Challenge Finished</button>
+                    <button id="vetoChallenge" class="challenge-btn">Veto Challenge</button>
+                </div>
+            `;
+
+            // Add event listeners for the buttons
+            document.getElementById('finishChallenge').addEventListener('click', finishChallenge);
+            document.getElementById('vetoChallenge').addEventListener('click', vetoChallenge);
         }
     })
     .catch(error => {
-        if (error.message === "No active challenge found for the user.") {
-            document.getElementById('mainContent').innerHTML = `<button onclick="getNewChallenge()">Get Challenge</button>`;
-        } else {
-            console.error('Error:', error);
-            document.getElementById('mainContent').innerHTML = `<div>Error loading challenge: ${error.message}</div>`;
-        }
+        console.error('Error:', error);
+        document.getElementById('mainContent').innerHTML = `<div>Error loading challenge: ${error.message}</div>`;
     });
 }
+
 
 
 function getNewChallenge() {
@@ -152,11 +164,65 @@ function getNewChallenge() {
         }
     })
     .then(data => {
-        // Assuming the response includes the new challenge data
         document.getElementById('mainContent').innerHTML = `<div>New Challenge: ${data.description}</div>`;
+        getCurrentChallenge();
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('mainContent').innerHTML = `<div>Error getting new challenge: ${error.message}</div>`;
+    });
+}
+
+function finishChallenge() {
+    const token = localStorage.getItem('token');
+    // Replace '/finish' with the actual endpoint for finishing a challenge
+    fetch('https://localhost:7212/api/Challenges/ChallengeSuccess', {
+        method: 'PUT',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+        // No body required as per your specification
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle successful finish action
+            console.log('Challenge finished successfully.');
+            window.location.href = '/';
+            // Perhaps reload challenges or update the UI accordingly
+        } else {
+            throw new Error('Failed to finish the challenge');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Handle errors, such as by displaying a message to the user
+    });
+}
+
+function vetoChallenge() {
+    const token = localStorage.getItem('token');
+    // Replace '/veto' with the actual endpoint for vetoing a challenge
+    fetch('https://localhost:7212/api/Challenges/VetoChallenge', {
+        method: 'PUT',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+        // No body required as per your specification
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle successful veto action
+            console.log('Challenge vetoed successfully.');
+            window.location.href = '/';
+            // Perhaps reload challenges or update the UI accordingly
+        } else {
+            throw new Error('Failed to veto the challenge');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Handle errors, such as by displaying a message to the user
     });
 }
