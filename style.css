@@ -3,7 +3,7 @@
     --bgcolor: #59281f;
     --bgbgcolor: #333333;
     --primary: #b79739;
-    --secondary: #608d43;
+    --secondary: #426b27;
 }
 
 html{
@@ -28,7 +28,7 @@ nav a{
     color: var(--textcolor);
     text-decoration: none;
     border-radius: 10px;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     padding: 7px;
 }
 
@@ -47,7 +47,7 @@ main{
 }
 
 .collapsible{
-    background-color: var(--primary);
+    background-color: var(--secondary);
     padding: 8px 20px; /* Adjusted padding to bring background closer to text */
     margin: 10px 0; /* Add some space between the buttons */
     text-align: center;
