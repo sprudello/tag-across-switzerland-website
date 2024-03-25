@@ -78,7 +78,7 @@ function transportationsView() {
         return '<h1>Transportations</h1><p>You must be logged in to view transportation methods.</p>';
     }
 
-    fetch('https://localhost:7212/api/TransportationsContoller/GetAllTransportations', {
+    fetch('https://195.202.218.245:7212/api/TransportationsContoller/GetAllTransportations', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -136,7 +136,7 @@ function itemsView() {
         return '<h1>Items</h1><p>You must be logged in to view items.</p>';
     }
 
-    fetch('https://localhost:7212/api/Items/GetAllItems', {
+    fetch('https://195.202.218.245:7212/api/Items/GetAllItems', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -196,7 +196,7 @@ function profileView() {
         return '<h1>Profile</h1><p>You must be logged in to view your profile.</p>';
     }
 
-    fetch('https://localhost:7212/api/Users/Profile', {
+    fetch('https://195.202.218.245:7212/api/Users/Profile', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -249,7 +249,7 @@ function getCurrentChallenge() {
         return;
     }
 
-    fetch('https://localhost:7212/api/Challenges/CurrentChallenge', {
+    fetch('https://195.202.218.245:7212/api/Challenges/CurrentChallenge', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -296,7 +296,7 @@ function getNewChallenge() {
     // Assume the token is available and the user is logged in
     const token = localStorage.getItem('token');
     
-    fetch('https://localhost:7212/api/Challenges/AssignChallenge', {
+    fetch('https://195.202.218.245:7212/api/Challenges/AssignChallenge', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -323,7 +323,7 @@ function getNewChallenge() {
 function finishChallenge() {
     const token = localStorage.getItem('token');
     // Replace '/finish' with the actual endpoint for finishing a challenge
-    fetch('https://localhost:7212/api/Challenges/ChallengeSuccess', {
+    fetch('https://195.202.218.245:7212/api/Challenges/ChallengeSuccess', {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -350,7 +350,7 @@ function finishChallenge() {
 function vetoChallenge() {
     const token = localStorage.getItem('token');
     // Replace '/veto' with the actual endpoint for vetoing a challenge
-    fetch('https://localhost:7212/api/Challenges/VetoChallenge', {
+    fetch('https://195.202.218.245:7212/api/Challenges/VetoChallenge', {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -380,7 +380,7 @@ function handleTransportationFormSubmit(event) {
     const transportationTitle = document.getElementById('transportationDropdown').value;
     const timeInMinutes = document.getElementById('timeInMinutes').value;
 
-    fetch('https://localhost:7212/api/TransportationsContoller/BuyTransportation', { 
+    fetch('https://195.202.218.245:7212/api/TransportationsContoller/BuyTransportation', { 
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -412,7 +412,7 @@ function buyItem() {
     const itemName = document.getElementById('itemSelection').value;
     const token = localStorage.getItem('token');
 
-    fetch('https://localhost:7212/api/Items/BuyItem', {
+    fetch('https://195.202.218.245:7212/api/Items/BuyItem', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
