@@ -18,8 +18,8 @@ function router() {
     const viewFunction = routes[path] || errorView;
 
     mainContent.innerHTML = viewFunction();
-    if (path === '/Profile') {
-        document.getElementById('logoutButton').addEventListener('click', logoutUser);
+    if (path === '/Profile' && isLoggedIn()) {
+        profileView();  // This should only be called if isLoggedIn() returns true
     }
     if (path === '/') {
         makeCollapsible();
@@ -81,8 +81,45 @@ function itemsView() {
 
 function profileView() {
     // Placeholder content or fetch and display user profile
+    const token = localStorage.getItem('token');
 
-    return '<h1>Profile</h1> <p>This is your profile page.</p><button id="logoutButton">Logout</button>';
+    if (!token) {
+        document.getElementById('mainContent').innerHTML = `<button onclick="showLoginForm()">Login to view profile</button>`;
+        return '<h1>Profile</h1><p>You must be logged in to view your profile.</p>';
+    }
+
+    fetch('https://localhost:7212/api/Users/Profile', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch profile information');
+        }
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('mainContent').innerHTML = `
+            <div class="profile-card">
+                <h2 class="profile-name">Name: ${data.username}</h2>
+                <p class="profile-balance">Balance: ${data.gottstattCoins}</p>
+                <p class="profile-multiplier">Multiplier: ${data.hasMultiplier ? 'Yes' : 'No'}</p>
+                <button id="logoutButton">Logout</button>
+                <!-- Add additional profile information here -->
+            </div>
+        `;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('mainContent').innerHTML = `<div>Error loading profile: ${error.message}</div>`;
+    });
+
+    return '<h1>Profile</h1><div>Loading profile information...</div>';
+
+    //return '<h1>Profile</h1> <p>This is your profile page.</p><button id="logoutButton">Logout</button>';
 }
 
 function errorView() {
