@@ -5,23 +5,24 @@ function navigateTo(event, path) {
 }
 
 function router() {
+    const basePath = '/tag-across-switzerland-website';
+    const path = window.location.pathname.replace(basePath, '') || '/';
+
     const routes = {
-        '/tag-across-switzerland-website/': homeView,
-        '/tag-across-switzerland-website/Challenges': challengesView,
-        '/tag-across-switzerland-website/Transportations': transportationsView,
-        '/tag-across-switzerland-website/Items': itemsView,
-        '/tag-across-switzerland-website/Profile': profileView,
+        '/': homeView,
+        '/Challenges': challengesView,
+        '/Transportations': transportationsView,
+        '/Items': itemsView,
+        '/Profile': profileView,
     };
 
-    const mainContent = document.getElementById('mainContent');
-    const path = window.location.pathname;
     const viewFunction = routes[path] || errorView;
-
     mainContent.innerHTML = viewFunction();
+    
     if (path === '/Profile' && isLoggedIn()) {
-        profileView();  // This should only be called if isLoggedIn() returns true
+        profileView();
     }
-    if (path === '/tag-across-switzerland-website/') {
+    if (path === '/') {
         makeCollapsible();
     }
 }
