@@ -132,8 +132,8 @@ main{
 #submitTransportation {
     padding: 15px 30px; 
     font-size: 1.2em; 
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--secondary);
+    color: var(--textcolor);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -147,7 +147,7 @@ main{
 }
 
 #itemsTable, #itemsTable th, #itemsTable td {
-    border: 1px solid white;
+    border: 1px solid var(--textcolor);
     border-collapse: collapse;
 }
 
@@ -168,8 +168,8 @@ main{
 .buy-btn {
     padding: 15px 30px;  /* Increase padding for a larger button */
     font-size: 1.2em;  /* Larger font size for the text inside the button */
-    background-color: var(--primary);  /* Use your primary color */
-    color: white;
+    background-color: var(--secondary);  /* Use your primary color */
+    color: var(--textcolor);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -180,4 +180,21 @@ main{
 
 .buy-btn:hover {
     background-color: darken(var(--primary), 10%);  /* Slightly darken the button on hover for visual feedback */
+}
+
+#loginFormButton{
+    background-color: var(--secondary);
+    border: none;
+    color: var(--textcolor);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#getChallengeButton{
+    background-color: var(--secondary);
+    border: none;
+    color: var(--textcolor);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
 }

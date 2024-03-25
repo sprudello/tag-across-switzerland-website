@@ -113,7 +113,7 @@ function transportationsView() {
                     ${data.map(transport => `<option value="${transport.typeName}">${transport.typeName}</option>`).join('')}
                 </select>
                 <input type="number" id="timeInMinutes" name="timeInMinutes" placeholder="Time in minutes" min="1" required />
-                <button type="submit" id="submitTransportation">Submit</button>
+                <button type="submit" id="submitTransportation">Buy</button>
             </form>
         `;
 
@@ -259,7 +259,7 @@ function getCurrentChallenge() {
     .then(response => {
         if (response.status === 404) {
             // No active challenge exists, show the "Get Challenge" button
-            document.getElementById('mainContent').innerHTML = `<button onclick="getNewChallenge()">Get Challenge</button>`;
+            document.getElementById('mainContent').innerHTML = `<button id="getChallengeButton" onclick="getNewChallenge()">Get Challenge</button>`;
             return;
         } else if (!response.ok) {
             // Other type of error

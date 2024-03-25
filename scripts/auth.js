@@ -7,7 +7,7 @@ function displayHeaderContent() {
     if (isLoggedIn()) {
         fetchUserData(); // Fetch and display user-specific data
     } else {
-        headerContent.innerHTML = '<button onclick="showLoginForm()">Login</button>';
+        headerContent.innerHTML = '<button id="loginFormButton" onclick="showLoginForm()">Login</button>';
     }
 }
 
