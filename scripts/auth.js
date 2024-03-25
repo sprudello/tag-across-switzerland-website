@@ -13,7 +13,7 @@ function displayHeaderContent() {
 
 function fetchUserData() {
     const token = localStorage.getItem('token');
-    fetch('https://localhost:7212/api/Users/Balance', {
+    fetch('https://localhost:7212/api/Users/Profile', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -21,7 +21,7 @@ function fetchUserData() {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('headerContent').innerHTML = `<p>Welcome, ${data.balance}</p>`;
+        document.getElementById('headerContent').innerHTML = `<p>Balance: ${data.gottstattCoins}, PenaltyEndTime: ${data.penaltyEndTime}</p>`;
     })
     .catch(error => {
         console.error('Error fetching user data:', error);
@@ -43,7 +43,7 @@ function showLoginForm() {
                 <input type="password" id="password" placeholder="Password" required>
                 <div class="popup-buttons">
                     <button onclick="loginUser()">Login</button>
-                    <button onclick="showRegisterForm()">Register</button>
+                    <button onclick="registerUser()">Register</button>
                 </div>
             </div>
         </div>
@@ -92,4 +92,32 @@ function logoutUser() {
     localStorage.removeItem('token');
     displayHeaderContent(); // Refresh the header to show the login button
     navigateTo(event, '/'); // Redirect to the home page after logout
+}
+
+function registerUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    fetch('https://localhost:7212/api/Users/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ UserName: username, Password: password }),
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Registration failed');
+        }
+    })
+    .then(data => {
+        alert('Registration successful. Please log in.');
+        closeLoginForm(); // Optionally, close the form or prompt to log in
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Registration failed: ' + error.message);
+    });
 }

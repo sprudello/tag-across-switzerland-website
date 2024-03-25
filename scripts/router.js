@@ -70,13 +70,120 @@ function challengesView() {
 }
 
 function transportationsView() {
-    // Placeholder content or fetch transportation options and display them
-    return '<h1>Transportations</h1><p>Transportation content will be displayed here.</p>';
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        document.getElementById('mainContent').innerHTML = `<button onclick="showLoginForm()">Login to view transportations</button>`;
+        return '<h1>Transportations</h1><p>You must be logged in to view transportation methods.</p>';
+    }
+
+    fetch('https://localhost:7212/api/TransportationsContoller/GetAllTransportations', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch transportation methods');
+        }
+        return response.json();
+    })
+    .then(data => {
+        let tableRows = data.map(transport => `<tr><td>${transport.typeName}</td><td>${transport.feePerMinute}</td></tr>`).join('');
+
+        document.getElementById('mainContent').innerHTML = `
+            <h1>Transportations</h1>
+            <table id="transportationTable">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Price/Minute</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+            <h2>Select a Transportation Method and Specify Duration</h2>
+            <form id="transportationForm">
+                <select id="transportationDropdown" name="transportationTitle">
+                    ${data.map(transport => `<option value="${transport.typeName}">${transport.typeName}</option>`).join('')}
+                </select>
+                <input type="number" id="timeInMinutes" name="timeInMinutes" placeholder="Time in minutes" min="1" required />
+                <button type="submit" id="submitTransportation">Submit</button>
+            </form>
+        `;
+
+        // Event listener for the form submission
+        document.getElementById('transportationForm').addEventListener('submit', handleTransportationFormSubmit);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('mainContent').innerHTML = `<div>Error loading transportations: ${error.message}</div>`;
+    });
+
+    return '<h1>Transportations</h1><div>Loading transportation methods...</div>';
 }
 
 function itemsView() {
-    // Placeholder content or fetch items and display them
-    return '<h1>Items</h1><p>Item content will be displayed here.</p>';
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        document.getElementById('mainContent').innerHTML = `<button onclick="showLoginForm()">Login to view items</button>`;
+        return '<h1>Items</h1><p>You must be logged in to view items.</p>';
+    }
+
+    fetch('https://localhost:7212/api/Items/GetAllItems', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch items');
+        }
+        return response.json();
+    })
+    .then(data => {
+        let tableRows = data.map(item => `<tr><td>${item.itemName}</td><td>${item.description}</td><td>${item.itemPrice}</td></tr>`).join('');
+        let dropdownOptions = data.map(item => `<option value="${item.itemName}">${item.itemName}</option>`).join('');
+
+
+        document.getElementById('mainContent').innerHTML = `
+            <h1>Items</h1>
+            <table id="itemsTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+            <div>
+                <label for="itemSelection">Select an Item:</label>
+                <select id="itemSelection">
+                    ${dropdownOptions}
+                </select>
+            </div>
+            <div>
+                <button id="buyItem" class="buy-btn" onclick="buyItem()">Buy</button>
+            </div>
+        `;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('mainContent').innerHTML = `<div>Error loading items: ${error.message}</div>`;
+    });
+
+    return '<h1>Items</h1><div>Loading items...</div>';
 }
 
 function profileView() {
@@ -263,5 +370,64 @@ function vetoChallenge() {
     .catch(error => {
         console.error('Error:', error);
         // Handle errors, such as by displaying a message to the user
+    });
+}
+
+function handleTransportationFormSubmit(event) {
+    event.preventDefault();
+    const token = localStorage.getItem('token');
+    const transportationTitle = document.getElementById('transportationDropdown').value;
+    const timeInMinutes = document.getElementById('timeInMinutes').value;
+
+    fetch('https://localhost:7212/api/TransportationsContoller/BuyTransportation', { 
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            transportationTitle: transportationTitle,
+            timeInMinutes: parseInt(timeInMinutes, 10)
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to post transportation usage');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Transportation usage logged successfully');
+        alert(`${data.message}`);
+        window.location.href = '/';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting data.');
+        // Handle error, e.g., show an error message
+    });
+}
+function buyItem() {
+    const itemName = document.getElementById('itemSelection').value;
+    const token = localStorage.getItem('token');
+
+    fetch('https://localhost:7212/api/Items/BuyItem', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ itemName: itemName })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to buy item');
+        }
+        alert(`Item bought successfully!`);
+        window.location.href = '/';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error buying item: ' + error.message);
     });
 }

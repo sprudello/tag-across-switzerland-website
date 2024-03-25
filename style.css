@@ -64,26 +64,25 @@ main{
 .challenge-card {
     background-color: var(--bgbgcolor);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px auto;
-    max-width: 600px; /* Adjust the width as needed */
+    max-width: 600px; 
 }
 
 .challenge-title {
-    font-size: 1.5em; /* Larger font size for titles */
+    font-size: 1.5em; 
     margin-bottom: 10px;
 }
 
 .challenge-description {
-    font-size: 1em; /* Regular font size for descriptions */
+    font-size: 1em; 
 }
 
 .challenge-reward {
-    font-size: 1.2em; /* Slightly larger font size for rewards */
+    font-size: 1.2em;
     margin-top: 20px;
-    font-weight: bold; /* Make the reward stand out */
-    color: var(--primary); /* A gold-like color for rewards; change as needed */
+    font-weight: bold; 
+    color: var(--primary); 
     text-align: right;
 }
 
@@ -110,4 +109,75 @@ main{
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+}
+#transportationTable, #transportationTable th, #transportationTable td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#transportationTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#transportationTable th, #transportationTable td {
+    padding: 10px;
+    text-align: left;
+}
+
+#transportationTable th {
+    background-color: var(--primary);
+}
+
+#submitTransportation {
+    padding: 15px 30px; 
+    font-size: 1.2em; 
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; 
+    margin: 20px auto; 
+    transition: background-color 0.3s;
+}
+
+#submitTransportation:hover {
+    background-color: darken(var(--primary), 10%); /* Darkens the button on hover */
+}
+
+#itemsTable, #itemsTable th, #itemsTable td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#itemsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#itemsTable th, #itemsTable td {
+    padding: 10px;
+    text-align: left;
+}
+
+#itemsTable th {
+    background-color: var(--primary); /* Make sure --primary is defined in your CSS */
+}
+
+.buy-btn {
+    padding: 15px 30px;  /* Increase padding for a larger button */
+    font-size: 1.2em;  /* Larger font size for the text inside the button */
+    background-color: var(--primary);  /* Use your primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;  /* Ensure it takes the full line */
+    margin: 20px auto;  /* Add some margin on the top and bottom, and center it horizontally */
+    transition: background-color 0.3s;  /* Smooth transition for any background color change */
+}
+
+.buy-btn:hover {
+    background-color: darken(var(--primary), 10%);  /* Slightly darken the button on hover for visual feedback */
 }
