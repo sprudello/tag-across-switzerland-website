@@ -6,11 +6,11 @@ function navigateTo(event, path) {
 
 function router() {
     const routes = {
-        '/': homeView,
-        '/Challenges': challengesView,
-        '/Transportations': transportationsView,
-        '/Items': itemsView,
-        '/Profile': profileView,
+        '/tag-across-switzerland-website/': homeView,
+        '/tag-across-switzerland-website/Challenges': challengesView,
+        '/tag-across-switzerland-website/Transportations': transportationsView,
+        '/tag-across-switzerland-website/Items': itemsView,
+        '/tag-across-switzerland-website/Profile': profileView,
     };
 
     const mainContent = document.getElementById('mainContent');
@@ -21,7 +21,7 @@ function router() {
     if (path === '/Profile' && isLoggedIn()) {
         profileView();  // This should only be called if isLoggedIn() returns true
     }
-    if (path === '/') {
+    if (path === '/tag-across-switzerland-website/') {
         makeCollapsible();
     }
 }
