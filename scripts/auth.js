@@ -13,7 +13,7 @@ function displayHeaderContent() {
 
 function fetchUserData() {
     const token = localStorage.getItem('token');
-    fetch('https://195.202.218.245:7212/api/Users/Profile', {
+    fetch('https://localhost:7212/api/Users/Profile', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -56,7 +56,7 @@ function loginUser() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('https://195.202.218.245:7212/api/Users/login', {
+    fetch('https://localhost:7212/api/Users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ function registerUser() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    fetch('https://195.202.218.245:7212/api/Users/register', {
+    fetch('https://localhost:7212/api/Users/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
