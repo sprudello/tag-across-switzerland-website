@@ -101,3 +101,13 @@ main{
 .challenge-btn:hover {
     background-color: darken(var(--primarycolor), 10%);
 }
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}

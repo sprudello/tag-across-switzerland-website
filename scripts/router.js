@@ -102,15 +102,19 @@ function profileView() {
         return response.json();
     })
     .then(data => {
-        document.getElementById('mainContent').innerHTML = `
+        const profileContent = `
             <div class="profile-card">
                 <h2 class="profile-name">Name: ${data.username}</h2>
                 <p class="profile-balance">Balance: ${data.gottstattCoins}</p>
                 <p class="profile-multiplier">Multiplier: ${data.hasMultiplier ? 'Yes' : 'No'}</p>
-                <button id="logoutButton">Logout</button>
-                <!-- Add additional profile information here -->
+                <button id="logoutButton" class="logout-btn">Logout</button>
             </div>
         `;
+
+        document.getElementById('mainContent').innerHTML = profileContent;
+
+        // Adding event listener for logout button
+        document.getElementById('logoutButton').addEventListener('click', logoutUser);
     })
     .catch(error => {
         console.error('Error:', error);
@@ -118,8 +122,6 @@ function profileView() {
     });
 
     return '<h1>Profile</h1><div>Loading profile information...</div>';
-
-    //return '<h1>Profile</h1> <p>This is your profile page.</p><button id="logoutButton">Logout</button>';
 }
 
 function errorView() {
