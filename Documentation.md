@@ -20,9 +20,10 @@ Julius Valentin Burlet
 | 21.03.2024 | 0.4.0   | Made a complete structural change on the frontend.                                                                                      |
 | 22.03.2024 | 0.4.1   | Added some fetches in the frontend.                                                                                                     |
 | 23.03.2024 | 0.4.2   | Added some functions that you can't buy items while doing a challenge. Frontend I added some button color and functions for challenges. |
-|            |         |                                                                                                                                         |
-
-
+| 25.03.2024 | 1.0.0   | Website functions finished. And API 1.0                                                                                                 |
+| 25.03.2024 | 1.1.0   | Design update.                                                                                                                          |
+| 05.04.2024 | 1.1.1   | Just some changes                                                                                                                       |
+| 03.05.2024 | 1.2.0   | Changed display time to UTC+2 and did some documentation.                                                                               |
 
 ## 1 Inform
 
@@ -34,12 +35,27 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 
 ### 1.2 User Stories
 
-| US-№ | Commitment | Type | Description                               |
-| ---- | ---------- | ---- | ----------------------------------------- |
-| 1    |            |      | As a 🤷‍♂️ I want to 🤷‍♂️, so that 🤷‍♂️ |
-| ...  |            |      |                                           |
+| US-№ | Commitment | Type | Description                                                                                                                                                        |
+| ---- | ---------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1    | Must       | F    | As a user, I want that I can register and my logindata is getting stored safely.                                                                                   |
+| 2    | Must       | F    | As a user I want to be able to log into my registered account.                                                                                                     |
+| 3    | Must       | F    | As a user I want to be able to logout of my account.                                                                                                               |
+| 4    | Must       | F    | As a user I want to be able to pull a random challenge to earn currency.                                                                                           |
+| 5    | Must       | F    | As a user I want to be able to succeed the challenge and get the reward.                                                                                           |
+| 6    | Must       | F    | As a user I want to be able to fail a challenge / veto it, and get a 30 minute penalty.                                                                            |
+| 7    | Must       | F    | As a user I don't want to be able to pull a challenge twice.                                                                                                       |
+| 8    | Must       | F    | As a user I want to be able to buy a transportation method with the amount of minutes I'm in the transportation as input.                                          |
+| 9    | Must       | F    | As a user i want to be able to buy a chosen item for the given price.                                                                                              |
+| 10   | Must       | F    | As a user I don't want to be able to do anything on the site when I have a penalty ongoing.                                                                        |
+| 11   | Must       | F    | As a user I want to be able to press on the different Nav buttons and get to the corresponding site. For example if I press Challenges I see my current challenge. |
+| 20   | Must       | Q    | As I user I want to have a website which isn't straining my eyes because of crazy colors.                                                                          |
+| 21   | Can        | Q    | As a user I want that all the possible transportationmethods with their fee / minute are displayed in a table.                                                     |
+| 22   | Can        | Q    | As a user I want that all the possible items are displayed in a table with their name, description and price                                                       |
+| 23   | Can        | Q    | As a user I want to see what my username is and if I have a multiplier active when I press on Profile.                                                             |
+| 24   | Can        | Q    | As a user I always want to see my balance and when my penalty ends on the top left corner.                                                                         |
+| 25   | Must       | Q    | As a user I want to be able to read the rules on the home screen.                                                                                                  |
 
-✍️ Each user story has an integer number (1, 2, 3 etc.), a commitment (Must or Can?), and a type (Functional, Quality, Boundary). The user story itself has the following form: *As a 🤷‍♂️ I want to 🤷‍♂️, so that 🤷‍♂️*.
+
 
 ### 1.3 Test Cases
 
