@@ -337,7 +337,7 @@ function finishChallenge() {
         if (response.ok) {
             // Handle successful finish action
             console.log('Challenge finished successfully.');
-            window.location.href = '/';
+            window.location.href = '/tag-across-switzerland-website/';
             // Perhaps reload challenges or update the UI accordingly
         } else {
             throw new Error('Failed to finish the challenge');
@@ -364,7 +364,7 @@ function vetoChallenge() {
         if (response.ok) {
             // Handle successful veto action
             console.log('Challenge vetoed successfully.');
-            window.location.href = '/';
+            window.location.href = '/tag-across-switzerland-website/';
             // Perhaps reload challenges or update the UI accordingly
         } else {
             throw new Error('Failed to veto the challenge');
@@ -402,7 +402,7 @@ function handleTransportationFormSubmit(event) {
     .then(data => {
         console.log('Transportation usage logged successfully');
         alert(`${data.message}`);
-        window.location.href = '/';
+        window.location.href = '/tag-across-switzerland-website/';
     })
     .catch(error => {
         console.error('Error:', error);
