@@ -427,7 +427,7 @@ function buyItem() {
             throw new Error('Failed to buy item');
         }
         alert(`Item bought successfully!`);
-        window.location.href = '/';
+        window.location.href = '/tag-across-switzerland-website/';
     })
     .catch(error => {
         console.error('Error:', error);
