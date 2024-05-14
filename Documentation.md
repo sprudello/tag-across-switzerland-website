@@ -100,39 +100,58 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 
 
 
-
-
-✍️ The number has the format `N.m`, where `N` is the number of the user story that the test case covers, and `m` is counted up from `1`. Example: The third test case covering the second user story would have the number `2.3`.
-
-### 1.4 Diagrams
-
-✍️ Insert a use case diagram with at least 3 use cases here; and a sketch of what your website should look like.
-
 ## 2 Plan
 
-| AP-№ | Deadline | Responsible | Description | Planned Time |
-| ---- | -------- | ----------- | ----------- | ------------ |
-| 1.A  |          |             |             |              |
-| ...  |          |             |             |              |
-
-Total:
-
-✍️ The number has the format `N.m`, where `N` is the number of the user story to which the work package relates, and `m` is alphabetized from `A` upwards. Example: The third work package related to the second user story would have the number `2.C`.
-
-✍️ A work package should take about 45 minutes for one person. The total number of work packages should be approximately: `Number of R-Sessions` × `Number of Group Members` × `4`. If you are working in a group of three on a project with two planned R-Sessions, you should have `2` × `3` × `4` = `24` work packages. If you find that you do not have enough work packages here, think of additional "Can" user stories for Chapter 1.2.
+| AP-№ | Deadline   | Responsible      | Description                                                                                                  | Planned Time |
+| ---- | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------ | ------------ |
+| 1.A  | 02.03.2024 | Julius V. Burlet | Design the registration form and implement input validation                                                  | 45'          |
+| 1.B  | 09.03.2024 | Julius V. Burlet | Implement secure storage for login data using encryption                                                     | 60'          |
+| 2.A  | 16.03.2024 | Julius V. Burlet | Design the login form and implement user authentication                                                      | 45'          |
+| 2.B  | 23.03.2024 | Julius V. Burlet | Implement session management for logged-in users                                                             | 60'          |
+| 3.A  | 30.03.2024 | Julius V. Burlet | Design the logout functionality and ensure proper session termination                                        | 30'          |
+| 4.A  | 06.04.2024 | Julius V. Burlet | Implement the random challenge generator                                                                     | 60'          |
+| 4.B  | 12.04.2024 | Julius V. Burlet | Display the random challenge to the user                                                                     | 45'          |
+| 5.A  | 19.04.2024 | Julius V. Burlet | Implement challenge completion logic and reward allocation                                                   | 60'          |
+| 6.A  | 26.04.2024 | Julius V. Burlet | Implement challenge failure logic and 30-minute penalty                                                      | 45'          |
+| 7.A  | 03.05.2024 | Julius V. Burlet | Ensure unique challenge generation to prevent duplicate pulls                                                | 45'          |
+| 8.A  | 03.05.2024 | Julius V. Burlet | Design the transportation method purchase form                                                               | 45'          |
+| 8.B  | 03.05.2024 | Julius V. Burlet | Implement logic for calculating transportation fees based on minutes                                         | 60'          |
+| 9.A  | 03.05.2024 | Julius V. Burlet | Design the item purchase form                                                                                | 45'          |
+| 9.B  | 03.05.2024 | Julius V. Burlet | Implement item purchase logic and price deduction                                                            | 45'          |
+| 10.A | 03.05.2024 | Julius V. Burlet | Implement penalty check to restrict buying and pulling challenges                                            | 45'          |
+| 11.A | 03.05.2024 | Julius V. Burlet | Implement navigation button functionality for "Home", "Challenges", "Transportation", "Items", and "Profile" | 60'          |
 
 ## 3 Decide
 
-✍️ Document your decisions and assumptions here regarding your user stories and the implementation.
+I decided to implement secure user registration and login, allowing 
+users to manage their accounts efficiently. The system will feature a 
+challenges module where users can pull, complete, or fail challenges, 
+with penalties restricting certain actions. Additionally, I will ensure 
+the website has an eye-friendly design and clear navigation, with 
+essential user information displayed prominently.
 
 ## 4 Realize
 
-| AP-№ | Date | Responsible | Planned Time | Actual Time |
-| ---- | ---- | ----------- | ------------ | ----------- |
-| 1.A  |      |             |              |             |
-| ...  |      |             |              |             |
 
-✍️ Every time you complete a work package, record here how long you actually spent on it.
+
+| AP-No | Date       | Responsible      | Planned Time | Actual Time |
+| ----- | ---------- | ---------------- | ------------ | ----------- |
+| 1.A   | 02.03.2024 | Julius V. Burlet | 45'          | 50'         |
+| 1.B   | 08.03.2024 | Julius V. Burlet | 60'          | 80'         |
+| 2.A   | 17.03.2024 | Julius V. Burlet | 45'          | 110'        |
+| 2.B   | 23.03.2024 | Julius V. Burlet | 60'          | 60'         |
+| 3.A   | 25.03.2024 | Julius V. Burlet | 30'          | 40'         |
+| 4.A   | 25.03.2024 | Julius V. Burlet | 60'          | 70'         |
+| 4.B   | 25.03.2024 | Julius V. Burlet | 45'          | 90'         |
+| 5.A   | 19.03.2024 | Julius V. Burlet | 60'          | 100'        |
+| 6.A   |            | Julius V. Burlet | 45'          | 30'         |
+| 7.A   | 03.05.2024 | Julius V. Burlet | 45'          | 120'        |
+| 8.A   | 25.03.2024 | Julius V. Burlet | 45'          | 50'         |
+| 8.B   | 25.03.2024 | Julius V. Burlet | 60'          | 70'         |
+| 9.A   | 25.03.2024 | Julius V. Burlet | 45'          | 60'         |
+| 9.B   | 25.03.2024 | Julius V. Burlet | 45'          | 110'        |
+| 10.A  | 23.03.2024 | Julius V. Burlet | 45'          | 80'         |
+| 11.A  | 25.03.2024 | Julius V. Burlet | 60'          | 40'         |
 
 ## 
 
