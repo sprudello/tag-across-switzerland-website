@@ -88,13 +88,11 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 | 10.2 | User has an ongoing penalty                              | User attempts to pull a challenge                                                                | Pulling challenges is disabled, and user is notified of the penalty                                                |
 | 10.3 | User has an ongoing penalty                              | User attempts to access other site features                                                      | User can access all other site features except buying items and pulling challenges, and is notified of the penalty |
 | 10.4 | User completes penalty duration                          | Penalty duration expires                                                                         | User regains access to all site features, including buying items and pulling challenges                            |
-
-| 11.1 | User logged in | User clicks on "Home" button in the navigation           | User is navigated to the home page                                                             |
-| ---- | -------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 11.2 | User logged in | User clicks on "Challenges" button in the navigation     | User is navigated to the challenges page where they can view their current challenge           |
-| 11.3 | User logged in | User clicks on "Transportation" button in the navigation | User is navigated to the transportation page                                                   |
-| 11.4 | User logged in | User clicks on "Items" button in the navigation          | User is navigated to the items page where they can view and manage their items                 |
-| 11.5 | User logged in | User clicks on "Profile" button in the navigation        | User is navigated to their profile page where they can view and edit their profile information |
+| 11.1 | User logged in                                           | User clicks on "Home" button in the navigation                                                   | User is navigated to the home page                                                                                 |
+| 11.2 | User logged in                                           | User clicks on "Challenges" button in the navigation                                             | User is navigated to the challenges page where they can view their current challenge                               |
+| 11.3 | User logged in                                           | User clicks on "Transportation" button in the navigation                                         | User is navigated to the transportation page                                                                       |
+| 11.4 | User logged in                                           | User clicks on "Items" button in the navigation                                                  | User is navigated to the items page where they can view and manage their items                                     |
+| 11.5 | User logged in                                           | User clicks on "Profile" button in the navigation                                                | User is navigated to their profile page where they can view and edit their profile information                     |
 
 ## 2 Plan
 
@@ -194,4 +192,4 @@ Everything works except for the items. There is still a bug which prevents, buyi
 
 ## 6 Evaluate
 
-https://portfolio.bbbaden.ch/view/view.php?t=7f4982ea2e82ff9ccdb3
+[Link to the Portfolio entry]([Tag-Across-Switzerland - Mahara der Berufsfachschule BBB](https://portfolio.bbbaden.ch/view/view.php?t=7f4982ea2e82ff9ccdb3)
