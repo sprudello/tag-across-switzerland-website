@@ -63,8 +63,6 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 | 1.4  | User already registered                                  | User attempts to login with correct username and password                                        | User successfully logs in                                                                                          |
 | 1.5  | User already registered                                  | User attempts to login with incorrect password                                                   | Login fails and user is prompted to enter correct credentials                                                      |
 | 1.6  | User already registered                                  | User attempts to login with a username that is not registered                                    | Login fails and user is notified that the username is not found                                                    |
-| 1.7  | User already registered                                  | User attempts to reset password                                                                  | User receives password reset instructions if the username is valid                                                 |
-| 1.8  | User already registered                                  | User attempts to reset password with a username that is not registered                           | Password reset fails and user is notified that the username is not found                                           |
 | 2.1  | User registered with valid credentials                   | User enters correct username and password                                                        | User successfully logs into their account                                                                          |
 | 2.2  | User registered with valid credentials                   | User enters incorrect password                                                                   | Login fails and user is prompted with a generic error message                                                      |
 | 2.3  | User registered with valid credentials                   | User enters incorrect username                                                                   | Login fails and user is prompted with a generic error message                                                      |
@@ -98,8 +96,6 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 | 11.4 | User logged in | User clicks on "Items" button in the navigation          | User is navigated to the items page where they can view and manage their items                 |
 | 11.5 | User logged in | User clicks on "Profile" button in the navigation        | User is navigated to their profile page where they can view and edit their profile information |
 
-
-
 ## 2 Plan
 
 | AP-№ | Deadline   | Responsible      | Description                                                                                                  | Planned Time |
@@ -132,8 +128,6 @@ essential user information displayed prominently.
 
 ## 4 Realize
 
-
-
 | AP-No | Date       | Responsible      | Planned Time | Actual Time |
 | ----- | ---------- | ---------------- | ------------ | ----------- |
 | 1.A   | 02.03.2024 | Julius V. Burlet | 45'          | 50'         |
@@ -157,13 +151,47 @@ essential user information displayed prominently.
 
 ## 5 Control
 
-| TC-№ | Date | Result | Tester |
-| ---- | ---- | ------ | ------ |
-| 1.1  |      |        |        |
-| ...  |      |        |        |
+| TC-№ | Date       | Result | Tester           |
+| ---- | ---------- | ------ | ---------------- |
+| 1.1  | 15.05.2024 | OK     | Julius V. Burlet |
+| 1.2  | "          | OK     | "                |
+| 1.3  | "          | OK     | "                |
+| 1.4  | "          | OK     | "                |
+| 1.5  | "          | OK     | "                |
+| 1.6  | "          | OK     | "                |
+| 2.1  | "          | OK     | "                |
+| 2.2  | "          | OK     | "                |
+| 2.3  | "          | OK     | "                |
+| 2.4  | "          | OK     | "                |
+| 2.5  | "          | OK     | "                |
+| 2.6  | "          | OK     | "                |
+| 3.1  | "          | OK     | "                |
+| 3.3  | "          | OK     | "                |
+| 4.1  | "          | OK     | "                |
+| 4.2  | "          | OK     | "                |
+| 4.3  | "          | OK     | "                |
+| 6.1  | "          | OK     | "                |
+| 7.1  | "          | OK     | "                |
+| 8.1  | "          | OK     | "                |
+| 8.2  | "          | OK     | "                |
+| 8.3  | "          | OK     | "                |
+| 8.4  | "          | OK     | "                |
+| 9.1  | "          | OK     | "                |
+| 9.2  | "          | NOK    | "                |
+| 9.3  | "          | NOK    | "                |
+| 9.4  | "          | OK     | "                |
+| 10.1 | "          | OK     | "                |
+| 10.2 | "          | OK     | "                |
+| 10.3 | "          | OK     | "                |
+| 10.4 | "          | OK     | "                |
+| 11.1 | "          | OK     | "                |
+| 11.2 | "          | OK     | "                |
+| 11.3 | "          | OK     | "                |
+| 11.4 | "          | OK     | "                |
+| 11.5 | "          | OK     | "                |
 
-✍️ Don't forget to add a conclusion that puts the test result into context.
+Everything works except for the items. There is still a bug which prevents, buying any item at any time. And there are constantly incorrect error messages. But the function isn't affected that much by it.
 
 ## 6 Evaluate
 
-✍️ Add a link to your learning report here.
+https://portfolio.bbbaden.ch/view/view.php?t=7f4982ea2e82ff9ccdb3
