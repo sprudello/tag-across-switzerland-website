@@ -192,4 +192,4 @@ Everything works except for the items. There is still a bug which prevents, buyi
 
 ## 6 Evaluate
 
-[Link to the Portfolio entry]([Tag-Across-Switzerland - Mahara der Berufsfachschule BBB](https://portfolio.bbbaden.ch/view/view.php?t=7f4982ea2e82ff9ccdb3)
+[Link to the Portfolio entry](https://portfolio.bbbaden.ch/view/view.php?t=7f4982ea2e82ff9ccdb3)
