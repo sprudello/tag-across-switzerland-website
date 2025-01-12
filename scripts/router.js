@@ -1,4 +1,4 @@
-var ipForAPI = "195.202.218.245";
+var ipForAPI = "69.69.69.69";
 
 function navigateTo(event, path) {
     history.pushState(null, null, path);
