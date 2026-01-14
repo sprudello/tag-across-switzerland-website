@@ -97,22 +97,22 @@ This is the infrastructure to play a huge game of tag like the people on "[Jet L
 
 | AP-№ | Deadline   | Responsible      | Description                                                                                                  | Planned Time |
 | ---- | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------ | ------------ |
-| 1.A  | 02.03.2024 | Julius V. Burlet | Design the registration form and implement input validation                                                  | 45'          |
-| 1.B  | 09.03.2024 | Julius V. Burlet | Implement secure storage for login data using encryption                                                     | 60'          |
-| 2.A  | 16.03.2024 | Julius V. Burlet | Design the login form and implement user authentication                                                      | 45'          |
-| 2.B  | 23.03.2024 | Julius V. Burlet | Implement session management for logged-in users                                                             | 60'          |
-| 3.A  | 30.03.2024 | Julius V. Burlet | Design the logout functionality and ensure proper session termination                                        | 30'          |
-| 4.A  | 06.04.2024 | Julius V. Burlet | Implement the random challenge generator                                                                     | 60'          |
-| 4.B  | 12.04.2024 | Julius V. Burlet | Display the random challenge to the user                                                                     | 45'          |
-| 5.A  | 19.04.2024 | Julius V. Burlet | Implement challenge completion logic and reward allocation                                                   | 60'          |
-| 6.A  | 26.04.2024 | Julius V. Burlet | Implement challenge failure logic and 30-minute penalty                                                      | 45'          |
-| 7.A  | 03.05.2024 | Julius V. Burlet | Ensure unique challenge generation to prevent duplicate pulls                                                | 45'          |
-| 8.A  | 03.05.2024 | Julius V. Burlet | Design the transportation method purchase form                                                               | 45'          |
-| 8.B  | 03.05.2024 | Julius V. Burlet | Implement logic for calculating transportation fees based on minutes                                         | 60'          |
-| 9.A  | 03.05.2024 | Julius V. Burlet | Design the item purchase form                                                                                | 45'          |
-| 9.B  | 03.05.2024 | Julius V. Burlet | Implement item purchase logic and price deduction                                                            | 45'          |
-| 10.A | 03.05.2024 | Julius V. Burlet | Implement penalty check to restrict buying and pulling challenges                                            | 45'          |
-| 11.A | 03.05.2024 | Julius V. Burlet | Implement navigation button functionality for "Home", "Challenges", "Transportation", "Items", and "Profile" | 60'          |
+| 1.A  | 02.03.2024 | sprudel | Design the registration form and implement input validation                                                  | 45'          |
+| 1.B  | 09.03.2024 | sprudel | Implement secure storage for login data using encryption                                                     | 60'          |
+| 2.A  | 16.03.2024 | sprudel | Design the login form and implement user authentication                                                      | 45'          |
+| 2.B  | 23.03.2024 | sprudel | Implement session management for logged-in users                                                             | 60'          |
+| 3.A  | 30.03.2024 | sprudel | Design the logout functionality and ensure proper session termination                                        | 30'          |
+| 4.A  | 06.04.2024 | sprudel | Implement the random challenge generator                                                                     | 60'          |
+| 4.B  | 12.04.2024 | sprudel | Display the random challenge to the user                                                                     | 45'          |
+| 5.A  | 19.04.2024 | sprudel | Implement challenge completion logic and reward allocation                                                   | 60'          |
+| 6.A  | 26.04.2024 | sprudel | Implement challenge failure logic and 30-minute penalty                                                      | 45'          |
+| 7.A  | 03.05.2024 | sprudel | Ensure unique challenge generation to prevent duplicate pulls                                                | 45'          |
+| 8.A  | 03.05.2024 | sprudel | Design the transportation method purchase form                                                               | 45'          |
+| 8.B  | 03.05.2024 | sprudel | Implement logic for calculating transportation fees based on minutes                                         | 60'          |
+| 9.A  | 03.05.2024 | sprudel | Design the item purchase form                                                                                | 45'          |
+| 9.B  | 03.05.2024 | sprudel | Implement item purchase logic and price deduction                                                            | 45'          |
+| 10.A | 03.05.2024 | sprudel | Implement penalty check to restrict buying and pulling challenges                                            | 45'          |
+| 11.A | 03.05.2024 | sprudel | Implement navigation button functionality for "Home", "Challenges", "Transportation", "Items", and "Profile" | 60'          |
 
 ## 3 Decide
 
@@ -127,22 +127,22 @@ essential user information displayed prominently.
 
 | AP-No | Date       | Responsible      | Planned Time | Actual Time |
 | ----- | ---------- | ---------------- | ------------ | ----------- |
-| 1.A   | 02.03.2024 | Julius V. Burlet | 45'          | 50'         |
-| 1.B   | 08.03.2024 | Julius V. Burlet | 60'          | 80'         |
-| 2.A   | 17.03.2024 | Julius V. Burlet | 45'          | 110'        |
-| 2.B   | 23.03.2024 | Julius V. Burlet | 60'          | 60'         |
-| 3.A   | 25.03.2024 | Julius V. Burlet | 30'          | 40'         |
-| 4.A   | 25.03.2024 | Julius V. Burlet | 60'          | 70'         |
-| 4.B   | 25.03.2024 | Julius V. Burlet | 45'          | 90'         |
-| 5.A   | 19.03.2024 | Julius V. Burlet | 60'          | 100'        |
-| 6.A   |            | Julius V. Burlet | 45'          | 30'         |
-| 7.A   | 03.05.2024 | Julius V. Burlet | 45'          | 120'        |
-| 8.A   | 25.03.2024 | Julius V. Burlet | 45'          | 50'         |
-| 8.B   | 25.03.2024 | Julius V. Burlet | 60'          | 70'         |
-| 9.A   | 25.03.2024 | Julius V. Burlet | 45'          | 60'         |
-| 9.B   | 25.03.2024 | Julius V. Burlet | 45'          | 110'        |
-| 10.A  | 23.03.2024 | Julius V. Burlet | 45'          | 80'         |
-| 11.A  | 25.03.2024 | Julius V. Burlet | 60'          | 40'         |
+| 1.A   | 02.03.2024 | sprudel | 45'          | 50'         |
+| 1.B   | 08.03.2024 | sprudel | 60'          | 80'         |
+| 2.A   | 17.03.2024 | sprudel | 45'          | 110'        |
+| 2.B   | 23.03.2024 | sprudel | 60'          | 60'         |
+| 3.A   | 25.03.2024 | sprudel | 30'          | 40'         |
+| 4.A   | 25.03.2024 | sprudel | 60'          | 70'         |
+| 4.B   | 25.03.2024 | sprudel | 45'          | 90'         |
+| 5.A   | 19.03.2024 | sprudel | 60'          | 100'        |
+| 6.A   |            | sprudel | 45'          | 30'         |
+| 7.A   | 03.05.2024 | sprudel | 45'          | 120'        |
+| 8.A   | 25.03.2024 | sprudel | 45'          | 50'         |
+| 8.B   | 25.03.2024 | sprudel | 60'          | 70'         |
+| 9.A   | 25.03.2024 | sprudel | 45'          | 60'         |
+| 9.B   | 25.03.2024 | sprudel | 45'          | 110'        |
+| 10.A  | 23.03.2024 | sprudel | 45'          | 80'         |
+| 11.A  | 25.03.2024 | sprudel | 60'          | 40'         |
 
 ## 
 
@@ -150,7 +150,7 @@ essential user information displayed prominently.
 
 | TC-№ | Date       | Result | Tester           |
 | ---- | ---------- | ------ | ---------------- |
-| 1.1  | 15.05.2024 | OK     | Julius V. Burlet |
+| 1.1  | 15.05.2024 | OK     | sprudel |
 | 1.2  | "          | OK     | "                |
 | 1.3  | "          | OK     | "                |
 | 1.4  | "          | OK     | "                |
